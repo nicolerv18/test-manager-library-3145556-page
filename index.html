@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manager Library · Gestor de Biblioteca</title>
+    <meta
+      name="description"
+      content="Manager Library: sistema para gestionar el catálogo, los socios, los préstamos y los vencidos de una biblioteca."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">📚</span>
+        <span>Manager Library</span>
+      </a>
+
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="siteNav"
+      >
+        Menú
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Principal">
+        <a href="#que-es">Qué es</a>
+        <a href="#funciones">Funcionalidades</a>
+        <a href="#roles">Roles</a>
+        <a href="#stack">Stack</a>
+        <a href="#empezar">Cómo empezar</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="wrap hero-inner">
+          <p class="eyebrow">Prueba técnica · Ficha ADSO 3145556</p>
+          <h1>Gestión de biblioteca, del catálogo al reporte</h1>
+          <p class="lead">
+            Un sistema para mantener el catálogo de libros, los socios y los préstamos,
+            y ver qué libros se prestan más. Pensado para una biblioteca pequeña.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#funciones">Ver funcionalidades</a>
+            <a class="btn btn-ghost" href="#empezar">Cómo empezar</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="que-es">
+        <div class="wrap">
+          <h2>¿Qué es?</h2>
+          <p class="section-lead">
+            Manager Library es una aplicación web con un backend API y un frontend en
+            React. El administrador y el bibliotecario entran con usuario y contraseña;
+            los socios son datos, no usuarios.
+          </p>
+          <div class="highlight-grid">
+            <article class="highlight">
+              <h3>Catálogo</h3>
+              <p>Libros con ISBN único, categoría, ejemplares y portada opcional. Búsqueda
+                parcial por título o autor.</p>
+            </article>
+            <article class="highlight">
+              <h3>Préstamos</h3>
+              <p>De 1 a 3 libros distintos por socio, con 14 días de plazo y un máximo de
+                3 libros sin devolver.</p>
+            </article>
+            <article class="highlight">
+              <h3>Vencidos e informe</h3>
+              <p>Lista de vencidos ordenada por días de retraso y el informe de libros
+                más prestados por rango de fechas.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="funciones">
+        <div class="wrap">
+          <h2>Funcionalidades</h2>
+          <p class="section-lead">
+            Cada pantalla cubre una historia de usuario del proyecto (HU-01 a HU-10).
+          </p>
+          <div class="cards">
+            <article class="card">
+              <h3>Iniciar sesión</h3>
+              <p>Autenticación con roles; cada acción se autoriza según el rol.</p>
+            </article>
+            <article class="card">
+              <h3>Gestionar libros</h3>
+              <p>Crear, buscar, editar, subir o quitar portada y dar de baja (soft delete).</p>
+            </article>
+            <article class="card">
+              <h3>Gestionar socios</h3>
+              <p>Alta, listado y búsqueda por nombre o documento.</p>
+            </article>
+            <article class="card">
+              <h3>Registrar préstamo</h3>
+              <p>Selección de socio y de hasta 3 libros distintos, con validaciones claras.</p>
+            </article>
+            <article class="card">
+              <h3>Registrar devolución</h3>
+              <p>Devolución por línea; el préstamo se cierra cuando todas vuelven.</p>
+            </article>
+            <article class="card">
+              <h3>Vencidos</h3>
+              <p>Libros sin devolver con la fecha vencida y los días de retraso.</p>
+            </article>
+            <article class="card">
+              <h3>Informe de más prestados</h3>
+              <p>Por rango de fechas inclusivo, con el título y la categoría congelados
+                en el momento del préstamo.</p>
+            </article>
+            <article class="card">
+              <h3>Crear bibliotecarios</h3>
+              <p>El administrador da de alta usuarios con rol de bibliotecario.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="roles">
+        <div class="wrap">
+          <h2>Roles</h2>
+          <div class="roles">
+            <article class="role">
+              <span class="role-badge role-admin">admin</span>
+              <h3>Administrador</h3>
+              <p>Mantiene el catálogo y los socios, crea bibliotecarios y ve todos los
+                informes.</p>
+            </article>
+            <article class="role">
+              <span class="role-badge role-librarian">librarian</span>
+              <h3>Bibliotecario</h3>
+              <p>Registra préstamos y devoluciones; consulta catálogo, socios y vencidos.</p>
+            </article>
+            <article class="role">
+              <span class="role-badge role-member">member</span>
+              <h3>Socio</h3>
+              <p>Persona que toma prestados los libros. No inicia sesión: es data, no un
+                usuario.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="stack">
+        <div class="wrap">
+          <h2>Stack</h2>
+          <p class="section-lead">
+            El spec se escribió para Python y .NET; el reto se resuelve con React y PHP
+            (Laravel).
+          </p>
+          <ul class="stack">
+            <li><strong>Backend</strong><span>PHP 8.3 + Laravel (solo API)</span></li>
+            <li><strong>Frontend</strong><span>React 18 + Vite + TypeScript</span></li>
+            <li><strong>Base de datos</strong><span>PostgreSQL 16</span></li>
+            <li><strong>Contenedores</strong><span>Docker Compose</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="empezar">
+        <div class="wrap">
+          <h2>Cómo empezar</h2>
+          <ol class="steps">
+            <li>
+              <h3>Clonar los repositorios</h3>
+              <p>API, app, infra y tool, en carpetas hermanas.</p>
+            </li>
+            <li>
+              <h3>Levantar el entorno</h3>
+              <p><code>docker compose up</code> arranca el motor de base de datos vacío,
+                la API y el frontend.</p>
+            </li>
+            <li>
+              <h3>Preparar la base de datos</h3>
+              <p>Correr las migraciones de Laravel: crean las tablas y las cinco
+                categorías.</p>
+            </li>
+            <li>
+              <h3>Cargar datos de demostración</h3>
+              <p>El sembrador (<code>tool</code>) crea socios y préstamos usando solo la
+                API.</p>
+            </li>
+            <li>
+              <h3>Abrir la aplicación</h3>
+              <p>Entrar en el frontend e iniciar sesión como administrador o
+                bibliotecario.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <div>
+          <p class="brand">
+            <span class="brand-mark" aria-hidden="true">📚</span>
+            <span>Manager Library</span>
+          </p>
+          <p class="muted">Sitio público de presentación. No se conecta a la API.</p>
+        </div>
+        <nav class="footer-links" aria-label="Repositorios">
+          <a href="https://github.com/nicolerv18/test-manager-library-3145556-api">API</a>
+          <a href="https://github.com/nicolerv18/test-manager-library-3145556-app">App</a>
+          <a href="https://github.com/nicolerv18/test-manager-library-3145556-infra">Infra</a>
+          <a href="https://github.com/nicolerv18/test-manager-library-3145556-tool">Tool</a>
+          <a href="https://github.com/nicolerv18/test-manager-library-3145556-docs">Docs</a>
+        </nav>
+      </div>
+      <p class="footer-note">© <span id="year">2026</span> · Manager Library</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
