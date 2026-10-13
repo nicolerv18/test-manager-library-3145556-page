@@ -48,3 +48,18 @@ No hay prórroga: suban avances parciales con commits pequeños durante la prueb
 | [`test-manager-library-3145556-page`](https://github.com/code-sena/test-manager-library-3145556-page) | Sitio público estático de presentación |
 | [`test-manager-library-3145556-infra`](https://github.com/code-sena/test-manager-library-3145556-infra) | Contenedores, red, volúmenes y motor de base de datos vacío |
 | [`test-manager-library-3145556-tool`](https://github.com/code-sena/test-manager-library-3145556-tool) | Utilidades: sembrador de datos de demostración |
+
+---
+
+## Sitio público (implementado)
+
+Presentación estática de *Manager Library*. **No se conecta a la API** (requisito de T-23).
+
+| Archivo | Qué es |
+|---|---|
+| `index.html` | Contenido y estructura: qué es, funcionalidades, roles, stack y cómo empezar |
+| `styles.css` | Estilos responsive, de móvil a escritorio |
+| `script.js` | Menú de navegación móvil y año del pie |
+
+**Cómo verlo:** abre `index.html` en el navegador (doble clic), o sirve la carpeta con
+`npx serve .`. No requiere build ni dependencias.
